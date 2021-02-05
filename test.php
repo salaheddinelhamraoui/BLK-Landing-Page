@@ -127,8 +127,7 @@ if ( $enabled_advance_search=="yes"){
 
         <div class="row">
             <?php foreach ($res as $val): //dump($val);?>
-            <?php $address= $val['street']." ".$val['city'];
-        $address.=" ".$val['state']." ".$val['post_code'];
+            <?php $address= $val['city']." ".$val['state'];
         
         $ratings=Yii::app()->functions->getRatings($val['merchant_id']);
   ?>
@@ -193,6 +192,7 @@ if ( $enabled_advance_search=="yes"){
 <?php endif;?>
 <!--END FEATURED RESTAURANT SECIONS-->
 
+
 <?php if ($theme_hide_cuisine<>2):?>
 <!--CUISINE SECTIONS-->
 <?php if ( $list=FunctionsV3::getCuisine() ): ?>
@@ -235,75 +235,32 @@ if ( $enabled_advance_search=="yes"){
     <!--container-->
 </div>
 <!--section-cuisine-->
+
+
 <?php endif;?>
 <?php endif;?>
 
 
 <?php if ($theme_show_app==2):?>
-<!--MOBILE APP SECTION-->
-<div id="mobile-app-sections" class="container">
-    <div class="container-medium">
-        <div class="row">
-            <div class="col-xs-5 into-row border app-image-wrap">
-                <img class="app-phone" src="<?php echo assetsURL()."/images/getapp-2.jpg"?>">
-            </div>
-            <!--col-->
-            <div class="col-xs-7 into-row border">
-                <h2><?php echo getOptionA('website_title')." ".t("in your mobile")?>! </h2>
-                <h3 class="green-text"><?php echo t("Get our app, it's the fastest way to order food on the go")?>.</h3>
 
-                <div class="row border" id="getapp-wrap">
-                    <?php if(!empty($theme_app_ios) && $theme_app_ios!="http://"):?>
-                    <div class="col-xs-4 border">
-                        <a href="<?php echo $theme_app_ios?>" target="_blank">
-                            <img class="get-app" src="<?php echo assetsURL()."/images/get-app-store.png"?>">
-                        </a>
-                    </div>
-                    <?php endif;?>
-
-                    <?php if(!empty($theme_app_android) && $theme_app_android!="http://"):?>
-                    <div class="col-xs-4 border">
-                        <a href="<?php echo $theme_app_android?>" target="_blank">
-                            <img class="get-app" src="<?php echo assetsURL()."/images/get-google-play.png"?>">
-                        </a>
-                    </div>
-                    <?php endif;?>
-
-                </div>
-                <!--row-->
-
-
-            </div>
-            <!--col-->
-        </div>
-        <!--row-->
+<div class="landing-application-container row">
+    <div class="landing-application-container__img col-lg-4 col-md-5 col-sm-12 d-flex">
+        <img src="assets/images/food-package1-min.png" alt="" />
     </div>
-    <!--container-medium-->
-
-    <p>TesT</p>
-
-    <div class="mytable border" id="getapp-wrap2">
-        <?php if(!empty($theme_app_ios) && $theme_app_ios!="http://"):?>
-        <div class="mycol border">
-            <a href="<?php echo $theme_app_ios?>" target="_blank">
-                <img class="get-app" src="<?php echo assetsURL()."/images/get-app-store.png"?>">
-            </a>
+    <div
+        class="landing-application-container__description d-flex flex-column align-items-center justify-content-center col-lg-8 col-md-7 col-sm-12">
+        <h2 class="title">
+            Gardez <span class="title__brand">BLK FOOD</span> dans votre poche !
+        </h2>
+        <p class="subtitle">
+            <span>Suivez vos commandes en temps réel</span>
+            <span class="second">et commandez où que vous soyez !</span>
+        </p>
+        <div class="landing-application-container__buttons">
+            <a href="#"><img src="https://glovoapp.com/images/app_store/download-button.svg" alt="" /></a>
+            <a href="#"><img src="https://glovoapp.com/images/google_play/download-button.svg" alt="" /></a>
         </div>
-        <!--col-->
-        <?php endif;?>
-        <?php if(!empty($theme_app_android) && $theme_app_android!="http://"):?>
-        <div class="mycol border">
-            <a href="<?php echo $theme_app_android?>" target="_blank">
-                <img class="get-app" src="<?php echo assetsURL()."/images/get-google-play.png"?>">
-            </a>
-        </div>
-        <!--col-->
-        <?php endif;?>
     </div>
-    <!--mytable-->
-
-
 </div>
-<!--container-->
-<!--END MOBILE APP SECTION-->
+
 <?php endif;?>
