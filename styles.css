@@ -127,11 +127,20 @@ h2 {
 
 .footer a {
     text-decoration: none;
+    transition: 0.2s;
+}
+
+.footer a:hover {
+    color: #dadada;
 }
 
 .r-footer {
     display: flex;
     flex-flow: row wrap;
+}
+
+.r-footer .first-child {
+    margin-bottom: 20px;
 }
 
 .r-footer>* {
@@ -202,7 +211,8 @@ h2 {
 .custom-card {
     background-color: #ebf9fc;
     border-radius: 30px;
-    height: 300px;
+    height: auto;
+    width: 150px;
     cursor: pointer;
     transition: 0.3s;
     width: auto;
@@ -226,10 +236,10 @@ h2 {
     border-radius: 60px;
     color: #525252;
     display: inline-block;
-    height: 120px;
-    line-height: 120px;
+    height: 80px;
+    line-height: 80px;
     margin-top: 40px;
-    width: 120px;
+    width: 80px;
     font-size: 40px;
     text-align: center;
 }
@@ -245,8 +255,6 @@ h2 {
 
 .custom-card h4 {
     text-align: center;
-    margin-top: 35px;
-    margin-bottom: 30px;
     font-weight: 500;
 }
 
